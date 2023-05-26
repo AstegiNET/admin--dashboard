@@ -12,12 +12,6 @@ const Login = () => {
               <img
                 aria-hidden="true"
                 class="object-cover w-full h-full dark:hidden"
-                src="../assets/img/login-office.jpeg"
-                alt="Office"
-              />
-              <img
-                aria-hidden="true"
-                class="hidden object-cover w-full h-full dark:block"
                 src={landImg}
                 alt="Office"
               />
@@ -30,14 +24,14 @@ const Login = () => {
                 <label class="block text-sm">
                   <span class="text-gray-700 dark:text-gray-400">Email</span>
                   <input
-                    class="block w-full mt-1 text-sm border-gray-200 p-2 border rounded-md focus:outline-none "
+                    class="block w-full mt-1 text-sm border-gray-300 p-2 border rounded-md focus:outline-gray-400 "
                     placeholder="email"
                   />
                 </label>
                 <label class="block mt-4 text-sm">
                   <span class="text-gray-700 dark:text-gray-400">Password</span>
                   <input
-                    class="block w-full mt-1 text-sm border-gray-200 p-2 border rounded-md focus:outline-none "
+                    class="block w-full mt-1 text-sm border-gray-300 p-2 border rounded-md focus:outline-gray-400 "
                     placeholder="***************"
                     type="password"
                   />
