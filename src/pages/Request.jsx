@@ -16,7 +16,6 @@ const Requests = () => {
       },
     };
     const response = await axios.get(API_URL, config);
-    console.log(response.data);
     setRequests(response.data);
   };
 
