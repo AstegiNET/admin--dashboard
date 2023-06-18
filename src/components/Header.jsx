@@ -16,8 +16,8 @@ const Header = () => {
     navigate("/");
   };
   return (
-    <header className="z-10 py-4 bg-white shadow-md dark:bg-gray-800">
-      <div className="container flex items-center justify-between h-full px-6 mx-auto text-indigo-600 dark:text-purple-300">
+    <header className="z-10 py-4 bg-white shadow-md ">
+      <div className="container flex items-center justify-between h-full px-6 mx-auto text-indigo-600 ">
         <div className="flex justify-center flex-1 lg:mr-32"></div>
         <ul className="flex items-center flex-shrink-0 space-x-6">
           <Link
