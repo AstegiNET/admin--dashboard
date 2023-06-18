@@ -47,7 +47,7 @@ const Enrollments = () => {
               <div className="w-full overflow-x-auto">
                 <table className="w-full whitespace-no-wrap">
                   <thead>
-                    <tr className="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                    <tr className="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b bg-gray-50">
                       <th className="px-4 py-3">tutor</th>
                       <th className="px-4 py-3">tuttee</th>
                       <th className="px-4 py-3">course</th>
@@ -57,12 +57,9 @@ const Enrollments = () => {
                       <th className="px-4 py-3">actions</th>
                     </tr>
                   </thead>
-                  <tbody className="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                  <tbody className="bg-white divide-y ">
                     {enrollments?.map((enrollment, index) => (
-                      <tr
-                        key={index}
-                        className="text-gray-700 dark:text-gray-400"
-                      >
+                      <tr key={index} className="text-gray-700 ">
                         <td className="px-4 py-3">
                           <div className="flex items-center text-sm">
                             <div className="relative hidden w-8 h-8 mr-3 rounded-full md:block">
@@ -81,7 +78,7 @@ const Enrollments = () => {
                               <p className="font-semibold">
                                 {enrollment.tutor_name}
                               </p>
-                              <p className="text-xs text-gray-600 dark:text-gray-400">
+                              <p className="text-xs text-gray-600 ">
                                 {enrollment.description
                                   ? enrollment.description
                                   : ""}
@@ -108,7 +105,7 @@ const Enrollments = () => {
                               <p className="font-semibold">
                                 {enrollment.tutee_name}
                               </p>
-                              <p className="text-xs text-gray-600 dark:text-gray-400">
+                              <p className="text-xs text-gray-600 ">
                                 {enrollment.description
                                   ? enrollment.description
                                   : ""}
@@ -139,7 +136,7 @@ const Enrollments = () => {
                         <td className="px-4 py-3">
                           <div className="flex items-center space-x-4 text-sm">
                             <button
-                              className="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-indigo-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                              className="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-indigo-600 rounded-lg  focus:outline-none focus:shadow-outline-gray"
                               aria-label="Edit"
                             >
                               <svg
@@ -152,7 +149,7 @@ const Enrollments = () => {
                               </svg>
                             </button>
                             <button
-                              className="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-red-500 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                              className="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-red-500 rounded-lg  focus:outline-none focus:shadow-outline-gray"
                               aria-label="Delete"
                             >
                               <svg
