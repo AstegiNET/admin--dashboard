@@ -4,7 +4,8 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import Sidebar from "../components/Sidebar";
 import { Link } from "react-router-dom";
-const API_URL = "http://localhost:5000/api/request/fetchEnrollments";
+import { FETCH_ENROLLMENTS } from "../api/API";
+// const API_URL = "http://localhost:5000/api/request/fetchEnrollments";
 
 const Enrollments = () => {
   const { admin } = useSelector((state) => state.admin);
@@ -15,7 +16,7 @@ const Enrollments = () => {
         Authorization: `Bearer ${admin?.token}`,
       },
     };
-    const response = await axios.get(API_URL, config);
+    const response = await axios.get(FETCH_ENROLLMENTS, config);
 
     setEnrollments(response.data);
   };

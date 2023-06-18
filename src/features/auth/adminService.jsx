@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import axios from "axios";
 import { LOGIN_ADMIN } from "../../api/API";
-const API_URL = "http://localhost:5000/api/admins/login";
+// const API_URL = "http://localhost:5000/api/admins/login";
 
 // Login user
 const login = async (userData) => {

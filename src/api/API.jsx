@@ -5,15 +5,17 @@ const BASE_URI = "https://astegni-net-back-end.vercel.app/api";
 export const CLIENT_BASE_URL = "https://astegni-net-back-end.vercel.app";
 
 export const LOGIN_ADMIN = `${BASE_URI}/admins/login`;
-export const REGISTER_TUTEE = `${BASE_URI}/tutees/register`;
-
-export const UPDATE_TUTEE_PROFILE = `${BASE_URI}/tutees/updateProfile`;
 export const GET_TUTEES = `${BASE_URI}/tutees/getTutees`;
+export const GET_TUTORS = `${BASE_URI}/tutors/search`;
+export const FETCH_REQUESTS = `${BASE_URI}/request/fetchRequests`;
+export const FETCH_ENROLLMENTS = `${BASE_URI}/request/fetchEnrollments`;
+
+export const REGISTER_TUTEE = `${BASE_URI}/tutees/register`;
+export const UPDATE_TUTEE_PROFILE = `${BASE_URI}/tutees/updateProfile`;
 
 export const REGISTER_TUTOR = `${BASE_URI}/tutors/register`;
 export const LOGIN_TUTOR = `${BASE_URI}/tutors/login`;
 export const UPDATE_TUTOR_PROFILE = `${BASE_URI}/tutors/updateProfile`;
-export const GET_TUTORS = `${BASE_URI}/tutors/search`;
 export const GET_TUTOR = `${BASE_URI}/tutors/tutor`;
 
 export const INITIALIZE_PAY = `${BASE_URI}/payment/pay`;
@@ -26,9 +28,6 @@ export const ACCEPT_REQUEST = `${BASE_URI}/request/acceptRequest`;
 export const REJECT_REQUEST = `${BASE_URI}/request/rejectRequest`;
 export const DELETE_REQUEST = `${BASE_URI}/request/deleteRequest`;
 export const GET_REQUESTS = `${BASE_URI}/request/getRequests`;
-export const FETCH_REQUESTS = `${BASE_URI}/request/fetchRequests`;
-
-export const FETCH_ENROLLMENTS = `${BASE_URI}/request/fetchEnrollments`;
 
 export const GET_COURSE = `${BASE_URI}/courses/getCourse`;
 export const FETCH_ALL_COURSES = `${BASE_URI}/courses/getAllCourses`;

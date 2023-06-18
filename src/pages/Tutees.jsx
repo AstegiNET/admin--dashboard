@@ -5,7 +5,8 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import Sidebar from "../components/Sidebar";
 import { Link } from "react-router-dom";
-const API_URL = "http://localhost:5000/api/tutees/getTutees";
+import { GET_TUTEES } from "../api/API";
+// const API_URL = "http://localhost:5000/api/tutees/getTutees";
 
 const Tutees = () => {
   const { admin } = useSelector((state) => state.admin);
@@ -16,7 +17,7 @@ const Tutees = () => {
         Authorization: `Bearer ${admin?.token}`,
       },
     };
-    const response = await axios.get(API_URL, config);
+    const response = await axios.get(GET_TUTEES, config);
     setTutees(response.data);
   };
   useEffect(() => {

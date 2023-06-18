@@ -5,7 +5,8 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import Sidebar from "../components/Sidebar";
 import { Link } from "react-router-dom";
-const API_URL = "http://localhost:5000/api/tutors/search";
+import { GET_TUTORS } from "../api/API";
+// const API_URL = "http://localhost:5000/api/tutors/search";
 
 const Tutors = () => {
   const { admin } = useSelector((state) => state.admin);
@@ -17,7 +18,7 @@ const Tutors = () => {
       },
     };
 
-    const response = await axios.get(API_URL, config);
+    const response = await axios.get(GET_TUTORS, config);
     setTutors(response.data);
   };
   useEffect(() => {
