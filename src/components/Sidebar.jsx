@@ -6,12 +6,9 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
   return (
     <div>
-      <aside className="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0">
-        <div className="py-4 text-gray-500 dark:text-gray-400">
-          <Link
-            className="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
-            href="#"
-          >
+      <aside className="z-20 hidden w-64 overflow-y-auto bg-white  md:block flex-shrink-0">
+        <div className="py-4 text-gray-500 ">
+          <Link className="ml-6 text-lg font-bold text-gray-800 " href="#">
             astegniNET
           </Link>
           <ul className="mt-6">
@@ -21,7 +18,7 @@ const Sidebar = () => {
                 aria-hidden="true"
               ></span>
               <Link
-                className="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                className="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 "
                 to="/"
               >
                 <svg
@@ -43,7 +40,7 @@ const Sidebar = () => {
           <ul>
             <li className="relative px-6 py-3">
               <Link
-                className="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                className="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 "
                 to="/tutees"
               >
                 <svg
@@ -64,7 +61,7 @@ const Sidebar = () => {
             </li>
             <li className="relative px-6 py-3">
               <Link
-                className="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                className="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 "
                 to="/tutors"
               >
                 <svg
@@ -84,7 +81,7 @@ const Sidebar = () => {
             </li>
             <li className="relative px-6 py-3">
               <Link
-                className="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                className="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 "
                 to="/requests"
               >
                 <svg
@@ -104,7 +101,7 @@ const Sidebar = () => {
             </li>
             <li className="relative px-6 py-3">
               <Link
-                className="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                className="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 "
                 to="/enrollments"
               >
                 <svg
