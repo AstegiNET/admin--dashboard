@@ -5,7 +5,8 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import Sidebar from "../components/Sidebar";
 import { Link } from "react-router-dom";
-import { GET_TUTORS } from "../api/API";
+import { GET_TUTORS, VERIFY_USER } from "../api/API";
+import { FaCheck, FaCheckCircle } from "react-icons/fa";
 // const API_URL = "http://localhost:5000/api/tutors/search";
 
 const TutorComponent = () => {
@@ -28,6 +29,18 @@ const TutorComponent = () => {
   useEffect(() => {
     console.log(tutors);
   }, [tutors]);
+
+  const verifyUser = async (id) => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${admin?.token}`,
+      },
+    };
+    const response = await axios.put(VERIFY_USER + id, config);
+    console.log(response.data);
+    return response.data;
+  };
+
   return (
     <div className="flex mb-20 ">
       <div className="flex flex-col flex-1 w-full">
@@ -93,19 +106,22 @@ const TutorComponent = () => {
                         <td className="px-4 py-3 text-sm">{tutor.createdAt}</td>
                         <td className="px-4 py-3">
                           <div className="flex items-center space-x-4 text-sm">
-                            <button
-                              className="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-indigo-600 rounded-lg  focus:outline-none focus:shadow-outline-gray"
-                              aria-label="Edit"
-                            >
-                              <svg
-                                className="w-5 h-5"
-                                aria-hidden="true"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
+                            {tutor.isQualified ? (
+                              <button
+                                className="flex items-center text-lg justify-between px-2 py-2  font-medium leading-5 text-green-700 rounded-lg  focus:outline-none"
+                                aria-label="Edit"
                               >
-                                <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path>
-                              </svg>
-                            </button>
+                                <FaCheckCircle />
+                              </button>
+                            ) : (
+                              <button
+                                onClick={() => verifyUser(tutor._id)}
+                                className="flex items-center justify-between px-2 py-2 text-md font-medium leading-5 text-green-700 rounded-lg  focus:outline-none hover:bg-gray-200"
+                                aria-label="Edit"
+                              >
+                                <FaCheck />
+                              </button>
+                            )}
                             <button
                               className="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-red-500 rounded-lg  focus:outline-none focus:shadow-outline-gray"
                               aria-label="Delete"

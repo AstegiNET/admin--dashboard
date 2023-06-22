@@ -17,7 +17,7 @@ const HomePage = () => {
       <div className="flex flex-col flex-1 w-full">
         <main className="h-full pb-16 overflow-y-auto">
           <div className="container grid px-6 mx-auto">
-            <a
+            <Link
               className="flex items-center justify-between p-4 mb-8 mt-5 text-md font-semibold text-purple-100 bg-indigo-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
               href="/"
             >
@@ -25,7 +25,7 @@ const HomePage = () => {
                 <span>astegniNet admin dashboard</span>
               </div>
               <span>View more</span>
-            </a>
+            </Link>
 
             <div className="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
               <div className="flex items-center p-4 bg-white rounded-lg shadow-md ">
@@ -42,7 +42,7 @@ const HomePage = () => {
                   <p className="mb-2 text-sm font-medium text-gray-600 ">
                     Total Tutees
                   </p>
-                  <p className="text-lg font-semibold text-gray-700 ">6389</p>
+                  <p className="text-lg font-semibold text-gray-700 ">12</p>
                 </div>
               </div>
 
@@ -64,7 +64,7 @@ const HomePage = () => {
                   <p className="mb-2 text-sm font-medium text-gray-600 ">
                     Total Tutors
                   </p>
-                  <p className="text-lg font-semibold text-gray-700 ">75</p>
+                  <p className="text-lg font-semibold text-gray-700 ">7</p>
                 </div>
               </div>
 
@@ -82,7 +82,7 @@ const HomePage = () => {
                   <p className="mb-2 text-sm font-medium text-gray-600 ">
                     Enrollments
                   </p>
-                  <p className="text-lg font-semibold text-gray-700 ">376</p>
+                  <p className="text-lg font-semibold text-gray-700 ">5</p>
                 </div>
               </div>
 
@@ -104,15 +104,9 @@ const HomePage = () => {
                   <p className="mb-2 text-sm font-medium text-gray-600 ">
                     Requests
                   </p>
-                  <p className="text-lg font-semibold text-gray-700 ">35</p>
+                  <p className="text-lg font-semibold text-gray-700 ">21</p>
                 </div>
               </div>
-            </div>
-            <div>
-              <h6 className="mb-4 px-10 text-md font-semibold text-gray-600 ">
-                Table of Enrollements
-              </h6>
-              <EnrollmentComponent />
             </div>
             <div>
               <h6 className="mb-4 px-10 text-md font-semibold text-gray-600 ">
@@ -122,15 +116,22 @@ const HomePage = () => {
             </div>
             <div>
               <h6 className="mb-4 px-10 text-md font-semibold text-gray-600 ">
-                Table of Requests
-              </h6>
-              <RequestComponent />
-            </div>
-            <div>
-              <h6 className="mb-4 px-10 text-md font-semibold text-gray-600 ">
                 Table of Tutors
               </h6>
               <TutorComponent />
+            </div>
+            <div>
+              <h6 className="mb-4 px-10 text-md font-semibold text-gray-600 ">
+                Table of Enrollements
+              </h6>
+              <EnrollmentComponent />
+            </div>
+
+            <div>
+              <h6 className="mb-4 px-10 text-md font-semibold text-gray-600 ">
+                Table of Requests
+              </h6>
+              <RequestComponent />
             </div>
           </div>
         </main>

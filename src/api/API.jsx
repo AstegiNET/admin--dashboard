@@ -21,3 +21,5 @@ export const DELETE_REQUEST = `${BASE_URI}/request/deleteRequest`;
 export const GET_REQUESTS = `${BASE_URI}/request/getRequests`;
 export const GET_COURSE = `${BASE_URI}/courses/getCourse`;
 export const FETCH_ALL_COURSES = `${BASE_URI}/courses/getAllCourses`;
+
+export const VERIFY_USER = `${BASE_URI}/admins/verifyUser/`;
