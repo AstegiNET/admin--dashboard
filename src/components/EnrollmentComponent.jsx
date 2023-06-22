@@ -119,7 +119,7 @@ const EnrollmentComponent = () => {
                           </span>
                         </td>
                         <td className="px-4 py-3 text-sm">
-                          {enrollment.updatedAt}
+                          {new Date(enrollment.updatedAt).toLocaleString()}
                         </td>
 
                         <td className="px-4 py-3">
