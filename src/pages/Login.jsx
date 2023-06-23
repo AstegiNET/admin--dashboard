@@ -7,7 +7,8 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login, reset } from "../features/auth/adminSlice";
-import landImg from "../assets/6491439-removebg-preview.png";
+
+import logo from "../assets/6491439-removebg-preview.png";
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -64,10 +65,9 @@ const Login = () => {
           <div className="flex flex-col overflow-y-auto md:flex-row">
             <div className="h-32 md:h-auto md:w-1/2">
               <img
-                aria-hidden="true"
-                className="object-cover w-full h-full dark:hidden"
-                src={landImg}
-                alt="Office"
+                className="hidden w-full h-full lg:block"
+                src={logo}
+                alt="AstegiNET"
               />
             </div>
             <div className="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
