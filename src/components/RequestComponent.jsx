@@ -124,7 +124,7 @@ const RequestComponent = () => {
                           </span>
                         </td>
                         <td className="px-4 py-3 text-sm">
-                          {request.updatedAt}
+                          {new Date(request.updatedAt).toLocaleString()}
                         </td>
 
                         <td className="px-4 py-3">

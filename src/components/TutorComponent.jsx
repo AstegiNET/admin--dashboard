@@ -4,12 +4,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import Sidebar from "../components/Sidebar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GET_TUTORS, VERIFY_USER } from "../api/API";
-import { FaCheck, FaCheckCircle } from "react-icons/fa";
+import { FaCheck, FaCheckCircle, FaVideo } from "react-icons/fa";
 // const API_URL = "http://localhost:5000/api/tutors/search";
 
 const TutorComponent = () => {
+  const navigate = useNavigate();
   const { admin } = useSelector((state) => state.admin);
   const [tutors, setTutors] = useState([]);
   const fetchTutos = async () => {
@@ -37,8 +38,12 @@ const TutorComponent = () => {
       },
     };
     const response = await axios.put(VERIFY_USER + id, config);
+    window.location.reload();
     console.log(response.data);
     return response.data;
+  };
+  const videoCall = () => {
+    window.open("/videocall", "_blank");
   };
 
   return (
@@ -103,24 +108,38 @@ const TutorComponent = () => {
                             {tutor.isQualified ? "Qualified" : "not Qualified"}
                           </span>
                         </td>
-                        <td className="px-4 py-3 text-sm">{tutor.createdAt}</td>
+                        <td className="px-4 py-3 text-sm">
+                          {new Date(tutor.createdAt).toLocaleString()}
+                        </td>
                         <td className="px-4 py-3">
                           <div className="flex items-center space-x-4 text-sm">
                             {tutor.isQualified ? (
-                              <button
-                                className="flex items-center text-lg justify-between px-2 py-2  font-medium leading-5 text-green-700 rounded-lg  focus:outline-none"
-                                aria-label="Edit"
-                              >
-                                <FaCheckCircle />
-                              </button>
+                              <>
+                                <button
+                                  className="flex items-center text-lg justify-between px-2 py-2  font-medium leading-5 text-green-700 rounded-lg  focus:outline-none"
+                                  aria-label="Edit"
+                                >
+                                  <FaCheckCircle />
+                                </button>
+                              </>
                             ) : (
-                              <button
-                                onClick={() => verifyUser(tutor._id)}
-                                className="flex items-center justify-between px-2 py-2 text-md font-medium leading-5 text-green-700 rounded-lg  focus:outline-none hover:bg-gray-200"
-                                aria-label="Edit"
-                              >
-                                <FaCheck />
-                              </button>
+                              <>
+                                <button
+                                  onClick={() => verifyUser(tutor._id)}
+                                  className="flex items-center justify-between px-2 py-2 text-md font-medium leading-5 text-green-700 rounded-lg  focus:outline-none hover:bg-gray-200"
+                                  aria-label="Edit"
+                                >
+                                  <FaCheck />
+                                </button>
+
+                                <button
+                                  onClick={() => videoCall()}
+                                  className="flex items-center justify-between px-2 py-2 text-md font-medium leading-5 text-green-700 rounded-lg  focus:outline-none hover:bg-gray-200"
+                                  aria-label="Edit"
+                                >
+                                  <FaVideo />
+                                </button>
+                              </>
                             )}
                             <button
                               className="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-red-500 rounded-lg  focus:outline-none focus:shadow-outline-gray"

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import { FaCheck, FaCheckCircle } from "react-icons/fa";
+import { FaCheck, FaCheckCircle, FaVideo } from "react-icons/fa";
 import { GET_TUTEES, VERIFY_USER } from "../api/API";
 // const API_URL = "http://localhost:5000/api/tutees/getTutees";
 
@@ -34,6 +34,7 @@ const TuteeComponent = () => {
       },
     };
     const response = await axios.put(VERIFY_USER + id, config);
+    window.location.reload();
     console.log(response.data);
     return response.data;
   };
@@ -98,7 +99,9 @@ const TuteeComponent = () => {
                             {tutee.verified ? "verified" : "not verified"}
                           </span>
                         </td>
-                        <td className="px-4 py-3 text-sm">{tutee.createdAt}</td>
+                        <td className="px-4 py-3 text-sm">
+                          {new Date(tutee.createdAt).toLocaleString()}
+                        </td>
 
                         <td className="px-4 py-3">
                           <div className="flex items-center space-x-4 text-sm">
@@ -110,13 +113,15 @@ const TuteeComponent = () => {
                                 <FaCheckCircle />
                               </button>
                             ) : (
-                              <button
-                                onClick={() => verifyUser(tutee._id)}
-                                className="flex items-center justify-between px-2 py-2 text-md font-medium leading-5 text-green-700 rounded-lg  focus:outline-none hover:bg-gray-200"
-                                aria-label="Edit"
-                              >
-                                <FaCheck />
-                              </button>
+                              <>
+                                <button
+                                  onClick={() => verifyUser(tutee._id)}
+                                  className="flex items-center justify-between px-2 py-2 text-md font-medium leading-5 text-green-700 rounded-lg  focus:outline-none hover:bg-gray-200"
+                                  aria-label="Edit"
+                                >
+                                  <FaCheck />
+                                </button>
+                              </>
                             )}
                             <button
                               className="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-red-500 rounded-lg  focus:outline-none focus:shadow-outline-gray"

@@ -1,5 +1,5 @@
 // const BASE_URI = "http://localhost:5000/api";
-// export const CLIENT_BASE_URL = "http://localhost:3000";
+// export const CLIENT_BASE_URL = "http://localhost:5713";
 
 const BASE_URI = "https://astegni-net-back-end.vercel.app/api";
 export const CLIENT_BASE_URL = "https://astegni-net-back-end.vercel.app";
