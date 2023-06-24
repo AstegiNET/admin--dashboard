@@ -121,7 +121,7 @@ const Login = () => {
                 <p className="mt-4">
                   <a
                     className="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline"
-                    href="./forgot-password.html"
+                    href="#"
                   >
                     Forgot your password?
                   </a>
