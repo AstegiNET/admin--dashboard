@@ -23,8 +23,9 @@ function App() {
           <Route path="/tutors" element={<Tutors />} />
           <Route path="/tutees" element={<Tutees />} />
           <Route path="/requests" element={<Requests />} />
-          <Route path="/videocall" element={<VideoCall />} />
         </Route>
+
+        <Route path="/videocall/interview" element={<VideoCall />} />
       </Routes>
     </Router>
   );
