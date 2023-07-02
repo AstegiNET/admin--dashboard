@@ -2,44 +2,9 @@
 import { useState } from "react";
 import AgoraUIKit, { layout } from "agora-react-uikit";
 // import { APP_ID } from "../.env/app_id";
-import ChatsScreen from "./components/ChatScreen";
+// import ChatsScreen from "./components/ChatScreen";
 import { FaWindowMaximize, FaWindowMinimize } from "react-icons/fa";
-const messages = [
-  {
-    sender: "Dries Vincent",
-    imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    message: "Hello there!",
-    time: "2022-11-01T12:00:00",
-  },
-  {
-    sender: "Michael Foster",
-    imageUrl:
-      "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    message: "Hi Alice, how are you?",
-    time: "2022-11-01T12:05:00",
-  },
-  {
-    sender: "Dries Vincent",
-    imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    message: "I am doing well, thanks for asking. How about you?",
-    time: "2022-11-01T12:10:00",
-  },
-  {
-    sender: "Michael Foster",
-    imageUrl:
-      "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    time: "2022-11-01T12:15:00",
-  },
-  {
-    sender: "Dries Vincent",
-    imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    message: "That is good to hear.",
-    time: "2022-11-01T12:20:00",
-  },
-];
+
 const VideoCall = ({ role }) => {
   const [videocall, setVideocall] = useState(true);
   const [isPinned, setPinned] = useState(false);
@@ -62,7 +27,7 @@ const VideoCall = ({ role }) => {
         {/* <div className="col-span-2">
           <ListOfUsers people={people}/>
         </div> */}
-        <div className="col-span-9">
+        <div className="col-span-12">
           <div className="flex flex-1 w-[calc(75vw)-100px] h-[calc(90vh)]">
             <div className="flex flex-col flex-1">
               {videocall ? (
@@ -132,9 +97,9 @@ const VideoCall = ({ role }) => {
             </div>
           </div>
         </div>
-        <div className="col-span-3">
+        {/* <div className="col-span-3">
           <ChatsScreen messages={messages} />
-        </div>
+        </div> */}
       </div>
       <div
         className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"

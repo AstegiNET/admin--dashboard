@@ -139,6 +139,9 @@ const TutorComponent = () => {
                                 >
                                   <FaVideo />
                                 </button>
+                                <a href={`mailto:${tutor.email}?subject=Invitation%20email&body=This%20is%20the%20link%20to%20for%20interview.%20http://localhost:5173/videocall`}>
+                                    Send Invite
+                                  </a>
                               </>
                             )}
                             <button

@@ -11,6 +11,7 @@ import RequestComponent from "../components/RequestComponent";
 const Requests = () => {
   const { admin } = useSelector((state) => state.admin);
   const [requests, setRequests] = useState([]);
+
   const fetchRequests = async () => {
     const config = {
       headers: {
