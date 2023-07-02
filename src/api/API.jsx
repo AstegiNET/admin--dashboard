@@ -1,8 +1,8 @@
-const BASE_URI = "http://localhost:5000/api";
-export const CLIENT_BASE_URL = "http://localhost:5713";
+// const BASE_URI = "http://localhost:5000/api";
+// export const CLIENT_BASE_URL = "http://localhost:5713";
 
-// const BASE_URI = "https://astegni-net-back-end.vercel.app/api";
-// export const CLIENT_BASE_URL = "https://astegni-net-back-end.vercel.app";
+const BASE_URI = "https://astegni-net-back-end.vercel.app/api";
+export const CLIENT_BASE_URL = "https://astegni-net-back-end.vercel.app";
 
 export const LOGIN_ADMIN = `${BASE_URI}/admins/login`;
 export const GET_TUTEES = `${BASE_URI}/tutees/getTutees`;
