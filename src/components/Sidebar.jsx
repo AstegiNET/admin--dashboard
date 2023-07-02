@@ -1,9 +1,24 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable no-unused-vars */
+/* eslint-disable no-unused-vars */
 import React from "react";
-import { Link } from "react-router-dom";
+
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { logout, reset } from "../features/auth/adminSlice";
 
 const Sidebar = () => {
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { admin, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.admin
+  );
+  const adminLogout = () => {
+    dispatch(logout());
+    dispatch(reset());
+    navigate("/");
+  };
   return (
     <div>
       <aside className="z-20 hidden w-64 overflow-y-auto bg-white  md:block flex-shrink-0">
@@ -121,7 +136,7 @@ const Sidebar = () => {
             </li>
           </ul>
           <div className="px-6 my-6">
-            <button className="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-indigo-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+            <button  onClick={ adminLogout} className="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-indigo-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
               logout
             </button>
           </div>

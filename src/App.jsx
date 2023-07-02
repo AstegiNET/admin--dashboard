@@ -9,7 +9,7 @@ import Enrollments from "./pages/Enrollments";
 import Tutors from "./pages/Tutors";
 import Tutees from "./pages/Tutees";
 import Requests from "./pages/Request";
-import VideoCall from "./video/VideoCall";
+import VideoCall from "./pages/video/VideoCall";
 
 function App() {
   return (
@@ -23,9 +23,9 @@ function App() {
           <Route path="/tutors" element={<Tutors />} />
           <Route path="/tutees" element={<Tutees />} />
           <Route path="/requests" element={<Requests />} />
+         
         </Route>
-
-        <Route path="/videocall/interview" element={<VideoCall />} />
+        <Route path="/videocall" element={<VideoCall />} />
       </Routes>
     </Router>
   );

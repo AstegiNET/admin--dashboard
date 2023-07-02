@@ -43,7 +43,7 @@ const TutorComponent = () => {
     return response.data;
   };
   const videoCall = () => {
-    window.open("/videocall/interview", "_blank");
+    window.open("/videocall", "_blank");
   };
 
   return (
@@ -132,15 +132,16 @@ const TutorComponent = () => {
                                   <FaCheck />
                                 </button>
 
-                                <div
+                                <button
                                   onClick={() => videoCall()}
                                   className="flex items-center justify-between px-2 py-2 text-md font-medium leading-5 text-green-700 rounded-lg  focus:outline-none hover:bg-gray-200"
                                   aria-label="Edit"
                                 >
-                                  <a href="mailto:recipient@example.com?subject=Hello%20World&body=This%20is%20the%20body%20of%20the%20email.">
+                                  <FaVideo />
+                                </button>
+                                <a href={`mailto:${tutor.email}?subject=Invitation%20email&body=This%20is%20the%20link%20to%20for%20interview.%20http://localhost:5173/videocall`}>
                                     Send Invite
                                   </a>
-                                </div>
                               </>
                             )}
                             <button
