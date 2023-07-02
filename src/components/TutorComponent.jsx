@@ -5,7 +5,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import Sidebar from "../components/Sidebar";
 import { Link, useNavigate } from "react-router-dom";
-import { GET_TUTORS, VERIFY_USER } from "../api/API";
+import { CLIENT_BASE_URL, GET_TUTORS, VERIFY_USER } from "../api/API";
 import { FaCheck, FaCheckCircle, FaVideo } from "react-icons/fa";
 // const API_URL = "http://localhost:5000/api/tutors/search";
 
@@ -139,7 +139,7 @@ const TutorComponent = () => {
                                 >
                                   <FaVideo />
                                 </button>
-                                <a href={`mailto:${tutor.email}?subject=Invitation%20email&body=This%20is%20the%20link%20to%20for%20interview.%20http://localhost:5173/videocall`}>
+                                <a href={`mailto:${tutor.email}?subject=Invitation%20email&body=This%20is%20the%20link%20to%20for%20interview.%20${CLIENT_BASE_URL}/videocall`}>
                                     Send Invite
                                   </a>
                               </>
