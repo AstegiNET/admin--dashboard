@@ -1,4 +1,4 @@
-const IP_ADDRESS = "http://192.168.115.127";
+const IP_ADDRESS = "http://192.168.137.118";
 
 // const BASE_URI = "http://localhost:5000/api";
 // export const CLIENT_BASE_URL = "http://localhost:5713";

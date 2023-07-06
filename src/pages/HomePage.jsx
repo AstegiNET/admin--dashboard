@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
@@ -9,8 +9,52 @@ import EnrollmentComponent from "../components/EnrollmentComponent";
 import TuteeComponent from "../components/TuteeComponent";
 import RequestComponent from "../components/RequestComponent";
 import TutorComponent from "../components/TutorComponent";
+import axios from "axios";
+import {
+  FETCH_ENROLLMENTS,
+  FETCH_REQUESTS,
+  GET_TUTEES,
+  GET_TUTORS,
+} from "../api/API";
+import { useSelector } from "react-redux";
 
 const HomePage = () => {
+  const { admin } = useSelector((state) => state.admin);
+  const [enrollments, setEnrollments] = useState([]);
+  const [requests, setRequests] = useState([]);
+  const [tutees, setTutees] = useState([]);
+  const [tutors, setTutors] = useState([]);
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${admin?.token}`,
+    },
+  };
+  const fetchEnrollments = async () => {
+    const response = await axios.get(FETCH_ENROLLMENTS, config);
+    setEnrollments(response.data);
+  };
+  const fetchRequests = async () => {
+    const response = await axios.get(FETCH_REQUESTS, config);
+    setRequests(response.data);
+  };
+
+  const fetchTutees = async () => {
+    const response = await axios.get(GET_TUTEES, config);
+    setTutees(response.data);
+  };
+
+  const fetchTutos = async () => {
+    const response = await axios.get(GET_TUTORS, config);
+    setTutors(response.data);
+  };
+
+  useEffect(() => {
+    fetchEnrollments();
+    fetchRequests();
+    fetchTutees();
+    fetchTutos();
+  }, []);
   return (
     <div className="flex h-screen ">
       <Sidebar />
@@ -42,7 +86,9 @@ const HomePage = () => {
                   <p className="mb-2 text-sm font-medium text-gray-600 ">
                     Total Tutees
                   </p>
-                  <p className="text-lg font-semibold text-gray-700 ">12</p>
+                  <p className="text-lg font-semibold text-gray-700 ">
+                    {tutees?.length}
+                  </p>
                 </div>
               </div>
 
@@ -64,7 +110,9 @@ const HomePage = () => {
                   <p className="mb-2 text-sm font-medium text-gray-600 ">
                     Total Tutors
                   </p>
-                  <p className="text-lg font-semibold text-gray-700 ">7</p>
+                  <p className="text-lg font-semibold text-gray-700 ">
+                    {tutors?.length}
+                  </p>
                 </div>
               </div>
 
@@ -82,7 +130,9 @@ const HomePage = () => {
                   <p className="mb-2 text-sm font-medium text-gray-600 ">
                     Enrollments
                   </p>
-                  <p className="text-lg font-semibold text-gray-700 ">5</p>
+                  <p className="text-lg font-semibold text-gray-700 ">
+                    {enrollments?.length}
+                  </p>
                 </div>
               </div>
 
@@ -104,7 +154,9 @@ const HomePage = () => {
                   <p className="mb-2 text-sm font-medium text-gray-600 ">
                     Requests
                   </p>
-                  <p className="text-lg font-semibold text-gray-700 ">21</p>
+                  <p className="text-lg font-semibold text-gray-700 ">
+                    {requests?.length}
+                  </p>
                 </div>
               </div>
             </div>
