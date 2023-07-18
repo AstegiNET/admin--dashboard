@@ -1,15 +1,15 @@
 /* eslint-disable no-unused-vars */
-// import { useState } from "react";
-// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import Login from "./pages/Login";
-// import HomePage from "./pages/HomePage";
-// import AdminProtectedRoutes from "./utils/AdminProtectedRoutes";
-// import Header from "./components/Header";
-// import Enrollments from "./pages/Enrollments";
-// import Tutors from "./pages/Tutors";
-// import Tutees from "./pages/Tutees";
-// import Requests from "./pages/Request";
-// import VideoCall from "./pages/video/VideoCall";
+import { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Login from "./pages/Login";
+import HomePage from "./pages/HomePage";
+import AdminProtectedRoutes from "./utils/AdminProtectedRoutes";
+import Header from "./components/Header";
+import Enrollments from "./pages/Enrollments";
+import Tutors from "./pages/Tutors";
+import Tutees from "./pages/Tutees";
+import Requests from "./pages/Request";
+import VideoCall from "./pages/video/VideoCall";
 
 function App() {
   return (
