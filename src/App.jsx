@@ -17,7 +17,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/admin/login" element={<Login />} />
-    
+        //<Route element={<AdminProtectedRoutes />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/enrollments" element={<Enrollments />} />
           <Route path="/tutors" element={<Tutors />} />
