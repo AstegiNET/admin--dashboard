@@ -17,14 +17,14 @@ function App() {
       <Header />
       <Routes>
         <Route path="/admin/login" element={<Login />} />
-        <Route element={<AdminProtectedRoutes />}>
+        //<Route element={<AdminProtectedRoutes />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/enrollments" element={<Enrollments />} />
           <Route path="/tutors" element={<Tutors />} />
           <Route path="/tutees" element={<Tutees />} />
           <Route path="/requests" element={<Requests />} />
          
-        </Route>
+       // </Route>
         <Route path="/videocall" element={<VideoCall />} />
       </Routes>
     </Router>
