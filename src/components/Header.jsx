@@ -37,7 +37,7 @@ const Header = () => {
               aria-label="Account"
               aria-haspopup="true"
             >
-              logout
+              login
             </button>
           )}
         </ul>
