@@ -16,16 +16,14 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path="/admin/login" element={<Login />} />
+        <Route path="/admin/login" element={<Login />}  ></Route>
         //<Route element={<AdminProtectedRoutes />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/enrollments" element={<Enrollments />} />
-          <Route path="/tutors" element={<Tutors />} />
-          <Route path="/tutees" element={<Tutees />} />
-          <Route path="/requests" element={<Requests />} />
-         
-     
-        <Route path="/videocall" element={<VideoCall />} />
+          <Route path="/" element={<HomePage />}  ></Route>
+          <Route path="/enrollments" element={<Enrollments />}  ></Route>
+          <Route path="/tutors" element={<Tutors />}  ></Route>
+          <Route path="/tutees" element={<Tutees />}  ></Route>
+          <Route path="/requests" element={<Requests />}  ></Route>
+        <Route path="/videocall" element={<VideoCall />} ></Route>
       </Routes>
     </Router>
   );
